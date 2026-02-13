@@ -2,17 +2,6 @@ const ADD = 'add'
 const MULTI = 'multi'
 const SUBTRACT = 'subtract'
 
-/* function calc(operation, a, b) {
-  if (operation === ADD) {
-    return a + b
-  }
-  if (operation === MULTI) {
-    return a * b
-  }
-  if (operation === SUBTRACT) {
-    return a - b
-  }
-} */
 function calc(operation, a, b) {
   switch (operation) {
     case ADD:
