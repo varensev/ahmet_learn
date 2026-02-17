@@ -1,6 +1,20 @@
-const userA = { name: "Oleg", role: "member", age: 20 };
-const userB = structuredClone(userA);
-userB.name = "Stepan";
-userB.role = "admin";
-console.log(userA);
-console.log(userB);
+const phoneBook = {
+    list: {
+        'John': 12345,
+        'Oleg': 54321,
+        'Ann': 12333,
+    },
+    add(name, number) {
+        this.list[name] = number;
+    },
+    remove(name) {
+        delete this.list[name]
+    }
+};
+phoneBook.add('AA', 123)
+phoneBook.remove('Oleg')
+for (const name in phoneBook.list) {
+    console.log(`${name} - ${phoneBook.list[name]}`)
+}
+
+
