@@ -1,20 +1,32 @@
-const phoneBook = {
-    list: {
-        'John': 12345,
-        'Oleg': 54321,
-        'Ann': 12333,
-    },
-    add(name, number) {
-        this.list[name] = number;
-    },
-    remove(name) {
-        delete this.list[name]
-    }
-};
-phoneBook.add('AA', 123)
-phoneBook.remove('Oleg')
-for (const name in phoneBook.list) {
-    console.log(`${name} - ${phoneBook.list[name]}`)
+const STATUS = {
+    IN_PROGRESS: "In progress",
+    DONE: "Done",
+    TO_DO: "To Do"
 }
 
+export const toDoList = {
+    list: {
+        "make a bed": STATUS.IN_PROGRESS,
+        "have a shower": STATUS.DONE,
+        "have a breakfast": STATUS.TO_DO
+    },
+    showlist() {
+        console.log(this.list)
+    },
+    addTask(task, status) {
+        if (typeof (task) === 'string' && Object.values(STATUS).includes(status)) {
+            this.list[task] = status
+        }
+    },
+    removeTask(task) {
+        delete this.list[task]
+    },
+    changeStatus(task, status) {
+        if (task in this.list) {
+            this.list[task] = status
+        };
+    }
+}
 
+toDoList.addTask(`111`, STATUS.TO_DO);
+toDoList.showlist()
