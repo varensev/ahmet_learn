@@ -1,23 +1,16 @@
-const ADD = 'add'
-const MULTI = 'multi'
-const SUBTRACT = 'subtract'
+let toDoList = ['Помыть посуду', 'Пропылесосить пол', 'Погладить рубашку', 'Полить цветы', 'Вытереть пыль'];
 
-function calc(operation, a, b) {
-  switch (operation) {
-    case ADD:
-      return a + b;
-    case MULTI:
-      return a * b
-    case SUBTRACT:
-      return a - b
-    default:
-      return 'Операция не выбрана'
-  }
+toDoList.push('Вынести мусор');
+toDoList.unshift('Заправить кровать');
+const lastTask = toDoList.pop();
+const firstTask = toDoList.shift();
+let firstTwoTask = toDoList.slice(0, 2);
+let deletedTask = toDoList.splice(2, 2);
+
+console.log(`first two task - ${firstTwoTask}`);
+console.log(`deleted task - ${deletedTask}`);
+console.log('To Do List:')
+for (const task of toDoList) {
+    console.log(task)
 }
 
-const resultMulti = calc(MULTI, 2, 3)
-const resultSubtract = calc(SUBTRACT, 3, 2)
-const resultAdd = calc(ADD, 1, 2)
-
-console.log(`Сложение: ${resultAdd}`, `Вычетание: ${resultSubtract}`, `Умножение: ${resultMulti}`)
-console.log(calc('asd', 2, 3))
