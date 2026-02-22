@@ -1,16 +1,10 @@
-let toDoList = ['Помыть посуду', 'Пропылесосить пол', 'Погладить рубашку', 'Полить цветы', 'Вытереть пыль'];
+let numbers = [1, 11, -2, 3, -10, 4];
+const absNumbers = numbers.filter(num => num > 0);
+console.log(`absolute numbers - ${absNumbers}`)
 
-toDoList.push('Вынести мусор');
-toDoList.unshift('Заправить кровать');
-const lastTask = toDoList.pop();
-const firstTask = toDoList.shift();
-let firstTwoTask = toDoList.slice(0, 2);
-let deletedTask = toDoList.splice(2, 2);
 
-console.log(`first two task - ${firstTwoTask}`);
-console.log(`deleted task - ${deletedTask}`);
-console.log('To Do List:')
-for (const task of toDoList) {
-    console.log(task)
-}
-
+const animals = ['cat', 'dog', 'elephant', 'tiger', 'lion'];
+const animalOne = animals.find(anim => anim.length >= 5);
+const elephantIndex = animals.indexOf('elephant');
+console.log(`animal - ${animalOne}`);
+console.log(`elephant index - ${elephantIndex}`);
