@@ -15,6 +15,12 @@ const toDoList = [
     { task: 'create a post', status: STATUS.IN_PROGRESS, priority: PRIORITY.HIGH },
     { task: 'make a bed', status: STATUS.DONE, priority: PRIORITY.LOW },
     { task: 'walk', status: STATUS.TO_DO, priority: PRIORITY.MEDIUM },
+    { task: '1', status: STATUS.IN_PROGRESS, priority: PRIORITY.HIGH },
+    { task: '2', status: STATUS.DONE, priority: PRIORITY.MEDIUM },
+    { task: '3', status: STATUS.TO_DO, priority: PRIORITY.HIGH },
+    { task: '4', status: STATUS.IN_PROGRESS, priority: PRIORITY.MEDIUM },
+    { task: '5', status: STATUS.DONE, priority: PRIORITY.LOW },
+    { task: '6', status: STATUS.TO_DO, priority: PRIORITY.LOW },
 
 ];
 
@@ -25,13 +31,21 @@ function showList() {
     })
 };
 
+function showListSpecial(status) {
+    toDoList.forEach((task) => {
+        if (task.status === status) {
+            console.log(task)
+        }
+    })
+};
+
 function addTask(task) {
     toDoList.push(task)
 };
 
 function changeTask(index, task) {
     toDoList[index] = task
-}
+};
 
 function removeTask(taskName) {
     const index = toDoList.findIndex(x => x.task === taskName)
@@ -40,13 +54,6 @@ function removeTask(taskName) {
     } else {
         return false
     }
-}
+};
 
-
-removeTask('eat')
-
-changeTask(2, { task: 'swim', status: STATUS.IN_PROGRESS, priority: PRIORITY.HIGH })
-
-addTask({ task: 'dasdasd', status: STATUS.IN_PROGRESS, priority: PRIORITY.LOW })
-
-showList()
+showListSpecial(STATUS.DONE)
